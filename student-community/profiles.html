@@ -3,129 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Profiles - CampusConnect</title>
+    <title>Student Directory - UniHub</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container flex justify-between items-center">
-            <a href="index.html" class="brand">Campus<span>Connect</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="community.html">Community</a>
-                <a href="profiles.html" class="active">Students</a>
-                <a href="resources.html">Resources</a>
-                <a href="login.html" class="btn btn-primary" style="color: white">Sign In</a>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav">
+            <div class="logo">
+                <a href="index.html" style="color: white;">UniHub</a>
             </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="community.html">Community & Doubts</a></li>
+                <li><a href="profiles.html" class="active">Students</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="study-groups.html">Study Groups</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="login.html" class="btn-login">Login / Register</a></li>
+            </ul>
         </div>
-    </nav>
+    </header>
 
-    <div class="container py-12">
-        <div class="flex justify-between items-center mb-8">
-            <h2>Student Directory</h2>
-            <div class="flex gap-4">
-                <input type="text" class="form-control" placeholder="Search by name or skill..." style="width: 250px;">
-                <select class="form-control" style="width: 150px;">
-                    <option>All Years</option>
-                    <option>1st Year</option>
-                    <option>2nd Year</option>
-                    <option>3rd Year</option>
-                    <option>4th Year</option>
-                </select>
-            </div>
+    <div class="container section">
+        <h2 class="section-title">Student Directory</h2>
+        
+        <p style="text-align: center; margin-bottom: 30px; color: #555;">Find seniors for guidance or juniors to help mentor. Search by names or skills.</p>
+
+        <div style="text-align: center; margin-bottom: 30px;">
+            <input type="text" placeholder="Search students..." style="padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 4px;">
+            <button class="btn" style="padding: 10px 15px;">Search</button>
         </div>
 
-        <!-- Profiles Grid -->
-        <div class="grid grid-3">
+        <div class="grid">
             
-            <!-- Student Card 1 -->
+            <!-- Student 1 -->
             <div class="card profile-card">
-                <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=4F46E5&color=fff&size=150" alt="Rahul" class="avatar-large">
-                <h3>Rahul Sharma</h3>
-                <p class="mb-2"><span class="badge">4th Year • Computer Science</span></p>
-                <p style="font-size: 0.9rem; margin-bottom: 16px;">Passionate about backend systems and distributed architecture. Incoming intern at TechCorp. Happy to review resumes!</p>
-                <div class="skills-list mb-4">
-                    <span class="badge secondary">Node.js</span>
-                    <span class="badge secondary">Python</span>
-                    <span class="badge secondary">System Design</span>
+                <img src="images/placeholder.jpg" alt="Profile" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Aditya+Verma&background=0056b3&color=fff&size=100'">
+                <h3>Aditya Verma</h3>
+                <p style="color: #666; font-size: 14px; margin-bottom: 5px;">4th Year • Computer Science</p>
+                <div style="margin-bottom: 10px;">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">Algorithms</span>
                 </div>
-                <button class="btn btn-outline" style="width: 100%;">Connect</button>
+                <p style="font-size: 13px; color: #555; margin-bottom: 15px;">Backend developer. Incoming Software Engineer at a Top MNC. Happy to review resumes of juniors or do mock interviews.</p>
+                <button class="btn" style="width: 100%;">View Profile / Connect</button>
             </div>
 
-            <!-- Student Card 2 -->
+            <!-- Student 2 -->
             <div class="card profile-card">
-                <img src="https://ui-avatars.com/api/?name=Ananya+Gupta&background=10B981&color=fff&size=150" alt="Ananya" class="avatar-large">
-                <h3>Ananya Gupta</h3>
-                <p class="mb-2"><span class="badge secondary">3rd Year • Information Tech</span></p>
-                <p style="font-size: 0.9rem; margin-bottom: 16px;">Frontend enthusiast exploring the depths of React and CSS animations. Looking for hackathon team members.</p>
-                <div class="skills-list mb-4">
-                    <span class="badge secondary">React</span>
-                    <span class="badge secondary">TailwindCSS</span>
-                    <span class="badge secondary">Figma</span>
+                <img src="images/placeholder.jpg" alt="Profile" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Megha+Sharma&background=28a745&color=fff&size=100'">
+                <h3>Megha Sharma</h3>
+                <p style="color: #666; font-size: 14px; margin-bottom: 5px;">3rd Year • Information Tech</p>
+                <div style="margin-bottom: 10px;">
+                    <span class="tag">C++</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Machine Learning</span>
                 </div>
-                <button class="btn btn-outline" style="width: 100%;">Connect</button>
+                <p style="font-size: 13px; color: #555; margin-bottom: 15px;">Currently focusing on deep learning architectures. Looking for teammates for the upcoming AI Hackathon.</p>
+                <button class="btn" style="width: 100%;">View Profile / Connect</button>
             </div>
 
-            <!-- Student Card 3 -->
+            <!-- Student 3 -->
             <div class="card profile-card">
-                <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=F59E0B&color=fff&size=150" alt="Priya" class="avatar-large">
-                <h3>Priya Patel</h3>
-                <p class="mb-2"><span class="badge">4th Year • Data Science</span></p>
-                <p style="font-size: 0.9rem; margin-bottom: 16px;">Data Science major focusing on NLP. Published a paper last semester. I can help juniors with Machine Learning basics.</p>
-                <div class="skills-list mb-4">
-                    <span class="badge secondary">Python</span>
-                    <span class="badge secondary">TensorFlow</span>
-                    <span class="badge secondary">SQL</span>
+                <img src="images/placeholder.jpg" alt="Profile" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Karan+Singh&background=dc3545&color=fff&size=100'">
+                <h3>Karan Singh</h3>
+                <p style="color: #666; font-size: 14px; margin-bottom: 5px;">2nd Year • Electronics</p>
+                <div style="margin-bottom: 10px;">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Arduino</span>
                 </div>
-                <button class="btn btn-outline" style="width: 100%;">Connect</button>
+                <p style="font-size: 13px; color: #555; margin-bottom: 15px;">Exploring web technologies alongside my core subjects. Building small scale IoT projects.</p>
+                <button class="btn" style="width: 100%;">View Profile / Connect</button>
             </div>
 
-            <!-- Student Card 4 -->
+            <!-- Student 4 -->
             <div class="card profile-card">
-                <img src="https://ui-avatars.com/api/?name=Vikram+Singh&background=3B82F6&color=fff&size=150" alt="Vikram" class="avatar-large">
-                <h3>Vikram Singh</h3>
-                <p class="mb-2"><span class="badge secondary">2nd Year • Computer Science</span></p>
-                <p style="font-size: 0.9rem; margin-bottom: 16px;">Just starting my coding journey. Exploring web development and open source. Eager to learn from seniors!</p>
-                <div class="skills-list mb-4">
-                    <span class="badge secondary">HTML/CSS</span>
-                    <span class="badge secondary">Javascript</span>
-                    <span class="badge secondary">C++</span>
+                <img src="images/placeholder.jpg" alt="Profile" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Ravi+Kumar&background=ffc107&color=fff&size=100'">
+                <h3>Ravi Kumar</h3>
+                <p style="color: #666; font-size: 14px; margin-bottom: 5px;">1st Year • Computer Science</p>
+                <div style="margin-bottom: 10px;">
+                    <span class="tag">C Programming</span>
+                    <span class="tag">Maths</span>
                 </div>
-                <button class="btn btn-outline" style="width: 100%;">Connect</button>
-            </div>
-
-            <!-- Student Card 5 -->
-            <div class="card profile-card">
-                <img src="https://ui-avatars.com/api/?name=Neha+Verma&background=8B5CF6&color=fff&size=150" alt="Neha" class="avatar-large">
-                <h3>Neha Verma</h3>
-                <p class="mb-2"><span class="badge">4th Year • Electronics</span></p>
-                <p style="font-size: 0.9rem; margin-bottom: 16px;">Hardware meets software. Working on IoT projects utilizing embedded systems. Let's talk circuits and code.</p>
-                <div class="skills-list mb-4">
-                    <span class="badge secondary">C</span>
-                    <span class="badge secondary">Arduino</span>
-                    <span class="badge secondary">IoT</span>
-                </div>
-                <button class="btn btn-outline" style="width: 100%;">Connect</button>
-            </div>
-
-            <!-- Student Card 6 -->
-            <div class="card profile-card">
-                <img src="https://ui-avatars.com/api/?name=Arjun+Reddy&background=EF4444&color=fff&size=150" alt="Arjun" class="avatar-large">
-                <h3>Arjun Reddy</h3>
-                <p class="mb-2"><span class="badge secondary">3rd Year • Computer Science</span></p>
-                <p style="font-size: 0.9rem; margin-bottom: 16px;">Competitive programmer and competitive gamer. Active on LeetCode. Preparing for upcoming summer internships.</p>
-                <div class="skills-list mb-4">
-                    <span class="badge secondary">Java</span>
-                    <span class="badge secondary">Data Structures</span>
-                    <span class="badge secondary">Algorithms</span>
-                </div>
-                <button class="btn btn-outline" style="width: 100%;">Connect</button>
+                <p style="font-size: 13px; color: #555; margin-bottom: 15px;">Just started college! Learning C programming right now from the curriculum. Searching for good study resources.</p>
+                <button class="btn" style="width: 100%;">View Profile / Connect</button>
             </div>
 
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>UniHub - A Student Mini Project</strong></p>
+            <p>&copy; 2026 College Student Community</p>
+        </div>
+    </footer>
 
 </body>
 </html>

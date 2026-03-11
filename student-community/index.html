@@ -3,86 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusConnect - College Student Community</title>
+    <title>Student Community Platform</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container flex justify-between items-center">
-            <a href="index.html" class="brand">Campus<span>Connect</span></a>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="community.html">Community</a>
-                <a href="profiles.html">Students</a>
-                <a href="resources.html">Resources</a>
-                <a href="login.html" class="btn btn-primary" style="color: white">Sign In</a>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav">
+            <div class="logo">
+                <a href="index.html" style="color: white;">UniHub</a>
             </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="community.html">Community & Doubts</a></li>
+                <li><a href="profiles.html">Students</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="study-groups.html">Study Groups</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="login.html" class="btn-login">Login / Register</a></li>
+            </ul>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
+    <!-- Welcome Section -->
     <section class="hero">
         <div class="container">
-            <h1>Learn, Connect, and Grow Together</h1>
-            <p>The exclusive platform for our college's seniors and juniors to collaborate, share academic resources, and build a strong professional network before graduation.</p>
-            <div class="flex justify-center gap-4">
-                <a href="community.html" class="btn btn-primary">Join the Discussion</a>
-                <a href="profiles.html" class="btn btn-outline">Find Peers</a>
-            </div>
+            <h1>Welcome to UniHub</h1>
+            <p>A simple and dedicated platform developed for our college students to connect, learn, and grow together. Seniors guide juniors, students share resources, and everyone benefits.</p>
+            <a href="login.html" class="btn">Join Our Community</a>
+        </div>
+    </section>
+
+    <!-- Purpose Section -->
+    <section class="section" style="background-color: #ffffff;">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <h2 class="section-title">Purpose of This Website</h2>
+            <p style="font-size: 16px; color: #555;">
+                This platform was built as a student mini project to solve a real problem: the gap between seniors and juniors. 
+                Often, juniors need help with academics, projects, or placement preparation but hesitate to ask. Seniors have valuable experience and materials but lack a centralized place to share them. This platform bridges that gap by offering a safe, academic-focused community environment.
+            </p>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="py-12">
+    <section class="section">
         <div class="container">
-            <h2 class="text-center mb-8">Platform Features</h2>
-            <div class="grid grid-3">
+            <h2 class="section-title">Platform Features</h2>
+            <div class="grid">
                 
-                <div class="card text-center">
-                    <div style="font-size: 2.5rem; margin-bottom: 16px;">💬</div>
-                    <h3>Ask Questions</h3>
-                    <p class="mt-2">Stuck on a tricky assignment or complex topic? Post your questions and get answers from experienced seniors.</p>
+                <div class="card">
+                    <h3>Discussion Forum</h3>
+                    <p>Ask academic doubts, discuss programming concepts, and get answers directly from your experienced seniors.</p>
                 </div>
 
-                <div class="card text-center">
-                    <div style="font-size: 2.5rem; margin-bottom: 16px;">📚</div>
-                    <h3>Share Resources</h3>
-                    <p class="mt-2">Access study materials, previous year papers, and interview prep guides categorized by subject and year.</p>
+                <div class="card">
+                    <h3>Study Resources</h3>
+                    <p>Access and upload study materials, previous year examination papers, and detailed placement preparation guides.</p>
                 </div>
 
-                <div class="card text-center">
-                    <div style="font-size: 2.5rem; margin-bottom: 16px;">🤝</div>
-                    <h3>Connect with Seniors</h3>
-                    <p class="mt-2">Build your college network. Find mentors, team members for projects, or guidance on placements.</p>
+                <div class="card">
+                    <h3>Project Teams</h3>
+                    <p>Looking for teammates for your next hackathon or embedded systems mini project? Find them here.</p>
                 </div>
 
-            </div>
-        </div>
-    </section>
+                <div class="card">
+                    <h3>Internships & Events</h3>
+                    <p>Stay updated with the latest on-campus and off-campus internships, college fests, and technical workshops.</p>
+                </div>
 
-    <!-- Community Benefits Section -->
-    <section class="py-12" style="background-color: white;">
-        <div class="container">
-            <div class="grid grid-2 items-center">
-                <div>
-                    <h2>Why Join CampusConnect?</h2>
-                    <p class="mt-4">Our platform is designed purely for academic, professional, and peer-to-peer growth without the noise of typical social media platforms.</p>
-                    <ul class="mt-4" style="list-style-position: inside; color: var(--text-muted); line-height: 2;">
-                        <li>Bridging the gap between Juniors and Seniors</li>
-                        <li>Zero promotional content - 100% learning focused</li>
-                        <li>Built-in specific categories for college subjects</li>
-                        <li>Verified college network</li>
-                    </ul>
-                    <a href="login.html" class="btn btn-primary mt-8">Create your account</a>
-                </div>
-                <div>
-                    <!-- Abstract Illustration placeholder -->
-                    <div class="card flex justify-center items-center" style="height: 300px; background: linear-gradient(45deg, #EEF2FF, white); border: 2px dashed var(--border-color); box-shadow: none;">
-                        <h3 style="color: var(--primary);">Interactive Network Graph</h3>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -90,31 +81,10 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="index.html" class="brand" style="font-size: 1.25rem;">Campus<span>Connect</span></a>
-                    <p class="mt-2" style="font-size: 0.9rem;">Empowering college students through collaborative learning.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Platform</h4>
-                    <ul>
-                        <li><a href="community.html">Discussion Forum</a></li>
-                        <li><a href="profiles.html">Student Directory</a></li>
-                        <li><a href="resources.html">Study Materials</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Help & Info</h4>
-                    <ul>
-                        <li><a href="#">Guidelines</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Contact Support</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 CampusConnect Mini Project. All rights reserved.
-            </div>
+            <p><strong>UniHub - A Student Mini Project</strong></p>
+            <p>Department of Computer Science & Engineering</p>
+            <p>Built with plain HTML & CSS to foster a collaborative college environment.</p>
+            <p>&copy; 2026 College Student Community</p>
         </div>
     </footer>
 

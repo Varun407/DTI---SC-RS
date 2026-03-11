@@ -3,122 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community - CampusConnect</title>
+    <title>Community Discussions - UniHub</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container flex justify-between items-center">
-            <a href="index.html" class="brand">Campus<span>Connect</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="community.html" class="active">Community</a>
-                <a href="profiles.html">Students</a>
-                <a href="resources.html">Resources</a>
-                <a href="login.html" class="btn btn-primary" style="color: white">Sign In</a>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav">
+            <div class="logo">
+                <a href="index.html" style="color: white;">UniHub</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="community.html" class="active">Community & Doubts</a></li>
+                <li><a href="profiles.html">Students</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="study-groups.html">Study Groups</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="login.html" class="btn-login">Login / Register</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container" style="padding: 40px 0; max-width: 800px;">
+        <h2 class="section-title">Student Discussion Forum</h2>
+        
+        <div style="text-align: right; margin-bottom: 20px;">
+            <button class="btn">+ Ask a Doubt</button>
+        </div>
+
+        <!-- Post 1: Junior Doubt -->
+        <div class="post-card">
+            <div class="post-header">
+                <h3 class="post-title">Error in defining arrays in C++ (Variable Sized Object)</h3>
+                <div class="post-meta">
+                    <strong>Ravi Kumar</strong> (Junior - 1st Year) | Posted today at 10:00 AM | Subject: Programming in C++
+                </div>
+            </div>
+            <div class="post-body">
+                <p>Hi seniors, I'm trying to declare an array in C++ like `int n; cin >> n; int arr[n];`. My code runs sometimes but sometimes gives a segmentation fault. My professor said variable sized object may not be intialized. What should I use instead?</p>
+            </div>
+            
+            <div class="comments">
+                <div class="comment-box">
+                    <div class="comment-meta">Megha Sharma (Senior - 3rd Year)</div>
+                    <p>Hey Ravi! Standard C++ does not support Variable Length Arrays (VLAs). Sometimes GCC compilers allow it as an extension, which is why it works sometimes. You should dynamically allocate memory using `int* arr = new int[n];` or better yet, use the Standard Template Library (STL) vectors: `#include <vector>` and then `std::vector<int> arr(n);`</p>
+                </div>
+                <div class="comment-box">
+                    <div class="comment-meta">Ravi Kumar (Junior - 1st Year)</div>
+                    <p>Got it! I will start studying vectors. Thank you so much!</p>
+                </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Main Content -->
-    <div class="container py-12" style="display: grid; grid-template-columns: 250px 1fr; gap: 32px; align-items: start;">
-        
-        <!-- Sidebar -->
-        <aside class="card" style="position: sticky; top: 100px;">
-            <h3 class="mb-4">Topics</h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
-                <li><a href="#" style="font-weight: 600; color: var(--primary);">All Discussions</a></li>
-                <li><a href="#" style="color: var(--text-dark);">Placement Prep</a></li>
-                <li><a href="#" style="color: var(--text-dark);">Doubt Solving</a></li>
-                <li><a href="#" style="color: var(--text-dark);">Project Collaboration</a></li>
-                <li><a href="#" style="color: var(--text-dark);">Internships</a></li>
-            </ul>
-            <button class="btn btn-primary mt-8" style="width: 100%;">+ New Post</button>
-        </aside>
-
-        <!-- Feed Section -->
-        <main class="flex-col gap-6">
-            <h2 class="mb-4">Recent Discussions</h2>
-
-            <!-- Post 1 (Senior giving advice) -->
-            <div class="card">
-                <div class="post-header">
-                    <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=4F46E5&color=fff" alt="Rahul" class="avatar">
-                    <div class="post-meta">
-                        <h4>Rahul Sharma <span class="badge">Senior (4th Year)</span></h4>
-                        <span>2 hours ago • Placement Prep</span>
-                    </div>
-                </div>
-                <div class="post-body">
-                    <p>Hey juniors! Placement season is approaching fast for the 3rd years. I've compiled a list of the most frequent Data Structure questions asked by top tech companies visiting our campus. My biggest advice: focus heavily on Trees and Graphs right now instead of just doing easy array problems. Let me know if anyone needs a mock interview!</p>
-                </div>
-                <div class="post-footer">
-                    <a>💬 12 Comments</a>
-                    <a>⬆️ 45 Upvotes</a>
-                    <a>🔖 Save</a>
-                </div>
-
-                <!-- Comments -->
-                <div class="comments-section">
-                    <div class="comment">
-                        <img src="https://ui-avatars.com/api/?name=Ananya+Gupta&background=10B981&color=fff" alt="Ananya" class="avatar">
-                        <div class="comment-box">
-                            <div class="flex justify-between items-center mb-2">
-                                <h4 style="font-size: 0.9rem;">Ananya Gupta <span class="badge secondary" style="font-size: 0.65rem;">Junior (3rd Year)</span></h4>
-                                <span style="font-size: 0.8rem; color: var(--text-muted);">1 hour ago</span>
-                            </div>
-                            <p style="font-size: 0.9rem;">Thank you so much bhaiya! I would love a mock interview next weekend if you are free. Should I DM you?</p>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=4F46E5&color=fff" alt="Rahul" class="avatar">
-                        <div class="comment-box">
-                            <div class="flex justify-between items-center mb-2">
-                                <h4 style="font-size: 0.9rem;">Rahul Sharma</h4>
-                                <span style="font-size: 0.8rem; color: var(--text-muted);">45 mins ago</span>
-                            </div>
-                            <p style="font-size: 0.9rem;">Absolutely, Ananya. DM me on the student directory and we'll fix a slot.</p>
-                        </div>
-                    </div>
+        <!-- Post 2: Senior Guidance -->
+        <div class="post-card">
+            <div class="post-header">
+                <h3 class="post-title">Preparation Guide for Upcoming Campus Placements</h3>
+                <div class="post-meta">
+                    <strong>Aditya Verma</strong> (Senior - 4th Year) | Posted yesterday | Placement Advice
                 </div>
             </div>
-
-            <!-- Post 2 (Junior asking a question) -->
-            <div class="card mt-4">
-                <div class="post-header">
-                    <img src="https://ui-avatars.com/api/?name=Vikram+Singh&background=F59E0B&color=fff" alt="Vikram" class="avatar">
-                    <div class="post-meta">
-                        <h4>Vikram Singh <span class="badge secondary">Junior (2nd Year)</span></h4>
-                        <span>5 hours ago • Doubt Solving</span>
-                    </div>
+            <div class="post-body">
+                <p>Hello 3rd-year juniors! Since campus drives will start in 3 months, I wanted to share my strategy that helped me get placed at a top MNC. Focus on:<br>
+                1. Core Subjects: OS, DBMS, Computer Networks<br>
+                2. DSA: Graphs, DP, Trees (don't ignore easy Array/String problems though!)<br>
+                3. Good projects (at least one full-stack or heavily domain-specific project).<br>
+                I have uploaded my notes in the Resources section. Feel free to ask any doubts below.</p>
+            </div>
+            
+            <div class="comments">
+                <div class="comment-box">
+                    <div class="comment-meta">Sneha Patil (Junior - 3rd Year)</div>
+                    <p>Thank you Aditya bhaiya. For the project, is a simple CRUD application using MERN stack enough, or should we include specific features?</p>
                 </div>
-                <div class="post-body">
-                    <p>I'm trying to learn React for my semester project, but I'm really confused about the `useEffect` hook and dependency arrays. My component keeps rendering in an infinite loop. Can someone share a good resource or explain the mental model?</p>
-                </div>
-                <div class="post-footer">
-                    <a>💬 3 Comments</a>
-                    <a>⬆️ 18 Upvotes</a>
-                    <a>🔖 Save</a>
-                </div>
-
-                <div class="comments-section">
-                    <div class="comment">
-                        <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=4F46E5&color=fff" alt="Priya" class="avatar">
-                        <div class="comment-box">
-                            <div class="flex justify-between items-center mb-2">
-                                <h4 style="font-size: 0.9rem;">Priya Patel <span class="badge">Senior (4th Year)</span></h4>
-                                <span style="font-size: 0.8rem; color: var(--text-muted);">3 hours ago</span>
-                            </div>
-                            <p style="font-size: 0.9rem;">Hey Vikram! The infinite loop usually happens when you update state inside `useEffect` without a proper dependency array. If you leave it blank, it runs on every render. Make sure to pass `[]` if you only want it to run once on mount. I've uploaded a detailed guide on this in the Resources section under 'Web Dev'!</p>
-                        </div>
-                    </div>
+                <div class="comment-box">
+                    <div class="comment-meta">Aditya Verma (Senior - 4th Year)</div>
+                    <p>MERN is good, but try to add a unique feature. E.g., if it's an e-commerce app, add a recommendation engine (even a simple one) or payment gateway integration. It gives you something unique to talk about in the interview.</p>
                 </div>
             </div>
+        </div>
 
-        </main>
+        <!-- Post 3: Project Discussion -->
+        <div class="post-card">
+            <div class="post-header">
+                <h3 class="post-title">Which Database is better for a Real-Time Chat App?</h3>
+                <div class="post-meta">
+                    <strong>Karan Singh</strong> (2nd Year) | Posted 2 days ago | Web Development
+                </div>
+            </div>
+            <div class="post-body">
+                <p>I am planning to build a real-time student chat application for my semester project using Node.js. Should I go with MongoDB or Firebase for the database? Any insights from seniors who built similar projects?</p>
+            </div>
+            
+            <div class="comments">
+                <div class="comment-box">
+                    <div class="comment-meta">Arjun Reddy (Senior - 4th Year)</div>
+                    <p>Firebase Realtime Database or Firestore makes building it much faster since WebSockets and real-time syncing are handled out of the box. But if your goal is to strictly learn backend architecture and Socket.io, use Node.js + MongoDB + Socket.io.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>UniHub - A Student Mini Project</strong></p>
+            <p>&copy; 2026 College Student Community</p>
+        </div>
+    </footer>
 
 </body>
 </html>
