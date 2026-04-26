@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Login / Register - UniHub</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
     <!-- Header & Navigation -->
@@ -25,35 +27,71 @@
 
     <div class="container">
         <div class="form-container">
-            <h2>Student Login</h2>
-            <form id="loginForm" action="index.html">
-                <div class="form-group">
-                    <label for="email">College Email Address:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your .edu email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-                
-                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Login</button>
-            </form>
-            
-            <p style="text-align: center; margin-top: 20px; font-size: 14px;">
-                Don't have an account? <a href="#" style="font-weight: bold;">Register Here</a>
-            </p>
+            <div id="login-section">
+                <h2 id="form-title">Student Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">College Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your srkrec Email ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div id="login-error" class="error-message"
+                        style="color: #ef4444; font-size: 13px; margin-bottom: 15px; display: none; padding: 10px; background: #fef2f2; border: 1px solid #fee2e2; border-radius: 6px;">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Login</button>
+                </form>
+
+                <p style="text-align: center; margin-top: 20px; font-size: 14px;">
+                    Don't have an account? <a href="#" id="toggle-register" style="font-weight: bold;">Register Here</a>
+                </p>
+            </div>
+
+            <div id="register-section" style="display: none;">
+                <h2>Student Registration</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="reg-name">Full Name:</label>
+                        <input type="text" id="reg-name" name="name" placeholder="Enter your name" required>
+                        <small style="color: #6b7280; display: block; margin-top: 5px;">Note: Your name will be your permanent username and cannot be changed.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">College Email Address:</label>
+                        <input type="email" id="reg-email" name="email" placeholder="Enter your srkrec Email ID"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Create Password:</label>
+                        <input type="password" id="reg-password" name="password" placeholder="Choose a password"
+                            required>
+                    </div>
+                    <div id="register-success" class="success-message"
+                        style="color: #059669; font-size: 13px; margin-bottom: 15px; display: none; padding: 10px; background: #ecfdf5; border: 1px solid #d1fae5; border-radius: 6px;">
+                    </div>
+                    <div id="register-error" class="error-message"
+                        style="color: #ef4444; font-size: 13px; margin-bottom: 15px; display: none; padding: 10px; background: #fef2f2; border: 1px solid #fee2e2; border-radius: 6px;">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Register</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px; font-size: 14px;">
+                    Already have an account? <a href="#" id="toggle-login" style="font-weight: bold;">Login Here</a>
+                </p>
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer style="position: absolute; bottom: 0; width: 100%;">
+    <footer>
         <div class="container">
             <p><strong>UniHub - A Student Mini Project</strong></p>
             <p>&copy; 2026 College Student Community</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/login.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/login.js"></script>
 </body>
+
 </html>

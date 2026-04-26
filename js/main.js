@@ -1,5 +1,14 @@
+import { auth, db } from './firebase-config.js';
+import { 
+    onAuthStateChanged, 
+    signOut 
+} from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+import { 
+    doc, 
+    getDoc 
+} from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+
 document.addEventListener("DOMContentLoaded", function() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
     const loginBtn = document.getElementById('login-btn');
     const userMenu = document.getElementById('user-menu');
     const hamburgerBtn = document.getElementById('hamburger-btn'); // User menu dropdown icon
@@ -10,11 +19,33 @@ document.addEventListener("DOMContentLoaded", function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
-    // Handle Login State
-    if (isLoggedIn === 'true') {
-        if (loginBtn) loginBtn.style.display = 'none';
-        if (userMenu) userMenu.style.display = 'flex';
-    }
+    // Handle Firebase Auth State Globally
+    onAuthStateChanged(auth, async (user) => {
+        const loginBtn = document.getElementById('login-btn');
+        const userMenu = document.getElementById('user-menu');
+        const userNameDisplay = document.getElementById('user-name-display');
+        
+        // Only consider the user "logged in" if they have verified their email
+        if (user && user.emailVerified) {
+            if (loginBtn) loginBtn.style.display = 'none';
+            if (userMenu) userMenu.style.display = 'flex';
+
+            // Fetch user name from Firestore to display in header
+            try {
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                if (userDoc.exists() && userNameDisplay) {
+                    const userData = userDoc.data();
+                    // Display first name or full name
+                    userNameDisplay.textContent = userData.name.split(' ')[0];
+                }
+            } catch (error) {
+                console.error("Error fetching user name for header:", error);
+            }
+        } else {
+            if (loginBtn) loginBtn.style.display = 'inline-block';
+            if (userMenu) userMenu.style.display = 'none';
+        }
+    });
 
     // Handle User Menu Dropdown (Logout)
     if (hamburgerBtn && logoutDropdown) {
@@ -27,10 +58,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Handle Logout
     if (logoutBtn) {
-        logoutBtn.addEventListener('click', function(e) {
+        logoutBtn.addEventListener('click', async function(e) {
             e.preventDefault();
-            localStorage.removeItem('isLoggedIn');
-            window.location.reload();
+            try {
+                await signOut(auth);
+                // Redirect to home or reload
+                window.location.href = 'index.html';
+            } catch (error) {
+                console.error("Logout error:", error);
+            }
         });
     }
 

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Dashboard - UniHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav">
+            <div class="logo">
+                <a href="index.html" style="color: #111827;">UniHub</a>
+            </div>
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="community.html">Community & Doubts</a></li>
+                <li><a href="profiles.html">Students</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="study-groups.html">Study Groups</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li id="auth-nav-item" style="position: relative;">
+                    <a href="login.html" class="btn-login" id="login-btn" style="display: none;">Login / Register</a>
+                    <div id="user-menu" style="display: none; align-items: center; justify-content: center;">
+                        <span id="user-name-display" style="font-size: 14px; font-weight: 600; color: #374151; margin-right: 5px;">Student</span>
+                        <span id="hamburger-btn" style="cursor: pointer; font-size: 24px; padding: 0 10px; color: #4b5563;">&#9776;</span>
+                        <div id="logout-dropdown" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #e5e7eb; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 10px; min-width: 140px; z-index: 1000;">
+                            <a href="dashboard.html" class="active" style="color: #374151; padding: 8px 12px; display: block; text-align: center; font-weight: 500; border-bottom: 1px solid #f3f4f6; margin-bottom: 5px;">My Dashboard</a>
+                            <a href="#" id="logout-btn" style="color: #ef4444; padding: 8px 12px; display: block; text-align: center; font-weight: 500;">Log Out</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="dashboard-grid">
+            <!-- Sidebar: Profile Overview -->
+            <aside>
+                <div class="dashboard-section">
+                    <div class="profile-card-header">
+                        <div class="profile-avatar-large" id="profile-initials">U</div>
+                        <h2 id="display-name">Loading...</h2>
+                        <p style="color: #6b7280; font-size: 14px;" id="display-email">Email Loading...</p>
+                    </div>
+                    
+                    <div class="profile-info-list">
+                        <div class="profile-info-row">
+                            <span class="info-label">Roll Number</span>
+                            <span class="info-value" id="display-roll">---</span>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="info-label">Year</span>
+                            <span class="info-value" id="display-year">---</span>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="info-label">Section</span>
+                            <span class="info-value" id="display-section">---</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="count-uploads">0</span>
+                            <span class="stat-label">Uploads</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="count-bookmarks">0</span>
+                            <span class="stat-label">Saved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h3><i class="fas fa-edit"></i> Update Profile</h3>
+                    <form id="profile-update-form">
+                        <div class="form-group">
+                            <label for="update-year">Academic Year:</label>
+                            <select id="update-year" name="year" class="form-control" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #d1d5db; margin-top: 5px;">
+                                <option value="">Select Year</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="update-section">Section:</label>
+                            <input type="text" id="update-section" name="section" placeholder="e.g. A, B, CS-A" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #d1d5db; margin-top: 5px;">
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 15px;">Save Changes</button>
+                    </form>
+                    <p id="update-msg" style="display: none; margin-top: 10px; text-align: center; font-size: 13px;"></p>
+                </div>
+            </aside>
+
+            <!-- Main Content: Activity -->
+            <section>
+                <div class="dashboard-section">
+                    <h3><i class="fas fa-upload"></i> My Uploads</h3>
+                    <div id="uploads-list" class="empty-state">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>You haven't uploaded any resources yet.</p>
+                        <a href="resources.html" class="btn" style="margin-top: 15px; display: inline-block;">Browse Resources</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h3><i class="fas fa-bookmark"></i> Bookmarked Resources</h3>
+                    <div id="bookmarks-list" class="empty-state">
+                        <i class="fas fa-bookmark"></i>
+                        <p>Your saved resources will appear here.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h3><i class="fas fa-hands-helping"></i> Contributions</h3>
+                    <div class="empty-state">
+                        <i class="fas fa-trophy"></i>
+                        <p>Total Contributions: <strong id="display-contributions">0</strong></p>
+                        <p style="font-size: 13px; margin-top: 5px;">Share resources or answer doubts to increase your contribution score!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; color: #6b7280; font-size: 14px;">
+            <p>UniHub - A Student Mini Project</p>
+            <p>&copy; 2026 College Student Community</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

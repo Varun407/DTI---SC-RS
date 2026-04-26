@@ -27,10 +27,12 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li id="auth-nav-item" style="position: relative;">
-                    <a href="login.html" class="btn-login" id="login-btn">Login / Register</a>
+                    <a href="login.html" class="btn-login" id="login-btn" style="display: none;">Login / Register</a>
                     <div id="user-menu" style="display: none; align-items: center; justify-content: center;">
+                        <span id="user-name-display" style="font-size: 14px; font-weight: 600; color: #374151; margin-right: 5px;">Student</span>
                         <span id="hamburger-btn" style="cursor: pointer; font-size: 24px; padding: 0 10px; color: #4b5563;">&#9776;</span>
-                        <div id="logout-dropdown" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #e5e7eb; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 10px; min-width: 120px; z-index: 1000;">
+                        <div id="logout-dropdown" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #e5e7eb; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 10px; min-width: 140px; z-index: 1000;">
+                            <a href="dashboard.html" style="color: #374151; padding: 8px 12px; display: block; text-align: center; font-weight: 500; border-bottom: 1px solid #f3f4f6; margin-bottom: 5px;">My Dashboard</a>
                             <a href="#" id="logout-btn" style="color: #ef4444; padding: 8px 12px; display: block; text-align: center; font-weight: 500;">Log Out</a>
                         </div>
                     </div>
@@ -128,6 +130,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
