@@ -10,7 +10,12 @@
     <header>
         <div class="container nav">
             <div class="logo">
-                <a href="index.html" style="color: white;">UniHub</a>
+                <a href="index.html" style="color: #111827;">UniHub</a>
+            </div>
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -112,41 +117,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn');
-            const loginBtn = document.getElementById('login-btn');
-            const userMenu = document.getElementById('user-menu');
-            const hamburgerBtn = document.getElementById('hamburger-btn');
-            const logoutDropdown = document.getElementById('logout-dropdown');
-            const logoutBtn = document.getElementById('logout-btn');
-
-            if (isLoggedIn === 'true') {
-                if (loginBtn) loginBtn.style.display = 'none';
-                if (userMenu) userMenu.style.display = 'flex';
-            }
-
-            if (hamburgerBtn) {
-                hamburgerBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    logoutDropdown.style.display = logoutDropdown.style.display === 'none' ? 'block' : 'none';
-                });
-            }
-
-            if (logoutBtn) {
-                logoutBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    localStorage.removeItem('isLoggedIn');
-                    window.location.reload();
-                });
-            }
-
-            document.addEventListener('click', function(e) {
-                if (logoutDropdown && logoutDropdown.style.display === 'block' && !userMenu.contains(e.target)) {
-                    logoutDropdown.style.display = 'none';
-                }
-            });
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

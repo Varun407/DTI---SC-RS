@@ -93,6 +93,41 @@ nav {
   text-decoration: none;
 }
 
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #4b5563;
+  margin: 4px 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-btn.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
@@ -352,4 +387,93 @@ footer p {
 
 footer strong {
   color: #374151;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header .container.nav {
+    position: relative;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 15px); /* Header padding adjustment */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px;
+    gap: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: mobileMenuFadeIn 0.3s ease;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 16px;
+  }
+
+  #auth-nav-item {
+    margin-top: 5px;
+    padding-top: 10px;
+    border-top: 1px solid #f3f4f6;
+  }
+
+  #user-menu {
+    justify-content: flex-start !important;
+    padding: 8px 16px;
+  }
+
+  #logout-dropdown {
+    right: auto !important;
+    left: 16px !important;
+    top: auto !important;
+    bottom: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes mobileMenuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
