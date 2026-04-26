@@ -45,82 +45,45 @@
         <h2 class="section-title">Academic & Placement Resources</h2>
         <p style="text-align: center; margin-bottom: 30px; color: #555;">These notes, previous papers, and guides are contributed by the students of our college.</p>
 
+        <!-- Search and Filter Section -->
+        <div class="filter-wrapper">
+            <div class="search-bar">
+                <input type="text" id="resource-search" placeholder="Search resources by title, subject, or tags (e.g. #DSA)...">
+            </div>
+            <div class="filter-controls">
+                <select id="subject-filter" class="filter-select">
+                    <option value="">All Subjects</option>
+                    <option value="Data Structures">Data Structures</option>
+                    <option value="DBMS">DBMS</option>
+                    <option value="Operating Systems">Operating Systems</option>
+                    <option value="Computer Networks">Computer Networks</option>
+                    <option value="Software Engineering">Software Engineering</option>
+                    <option value="Aptitude">Aptitude</option>
+                    <option value="Coding Prep">Coding Prep</option>
+                    <option value="Interview Prep">Interview Prep</option>
+                </select>
+                <select id="semester-filter" class="filter-select">
+                    <option value="">All Semesters</option>
+                    <option value="1st Year">1st Year</option>
+                    <option value="2nd Year">2nd Year</option>
+                    <option value="3rd Year">3rd Year</option>
+                    <option value="4th Year">4th Year</option>
+                </select>
+                <select id="type-filter" class="filter-select">
+                    <option value="">All Types</option>
+                    <option value="Notes">Notes</option>
+                    <option value="Paper">Previous Papers</option>
+                    <option value="Guide">Guides</option>
+                </select>
+            </div>
+        </div>
+
         <div style="text-align: right; margin-bottom: 20px;">
             <button class="btn" style="background-color: #28a745;">+ Upload Study Material</button>
         </div>
 
-        <div class="grid">
-            
-            <div class="card">
-                <h3 style="border-bottom: 2px solid #0056b3; padding-bottom: 10px;">Semester Study Notes</h3>
-                <ul style="list-style-type: none; margin-top: 15px;">
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>Data Structures using C</strong> 
-                        <span class="tag">2nd Year</span>
-                        <br>
-                        <a href="#" style="font-size: 14px;">Download PDF (Shared by Megha Sharma)</a>
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>Database Management Systems</strong> 
-                        <span class="tag">3rd Year</span>
-                        <br>
-                        <a href="#" style="font-size: 14px;">Download PDF (Shared by Aditya Verma)</a>
-                    </li>
-                    <li style="padding: 10px 0;">
-                        <strong>Operating Systems Hand-written Notes</strong> 
-                        <span class="tag">3rd Year</span>
-                        <br>
-                        <a href="#" style="font-size: 14px;">Download ZIP (Shared by Aditya Verma)</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3 style="border-bottom: 2px solid #0056b3; padding-bottom: 10px;">Previous Exam Papers</h3>
-                <ul style="list-style-type: none; margin-top: 15px;">
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>Mid-Term Papers 2024 - Computer Networks</strong> 
-                        <br>
-                        <a href="#" style="font-size: 14px;">View PDF</a>
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>End-Semester Papers 2023 - All Subjects</strong> 
-                        <span class="tag">1st Year</span>
-                        <br>
-                        <a href="#" style="font-size: 14px;">Download Folder</a>
-                    </li>
-                    <li style="padding: 10px 0;">
-                        <strong>Software Engineering Question Bank</strong> 
-                        <br>
-                        <a href="#" style="font-size: 14px;">View Document</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3 style="border-bottom: 2px solid #0056b3; padding-bottom: 10px;">Placement Preparation Materials</h3>
-                <ul style="list-style-type: none; margin-top: 15px;">
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>TCS NQT Preparation Strategy and Aptitude Questions</strong> 
-                        <span class="tag">Aptitude</span>
-                        <br>
-                        <a href="#" style="font-size: 14px;">Open Important Document</a>
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>Top 100 Coding Questions asked in Tech Mahindra / Infosys</strong> 
-                        <span class="tag">Coding Round</span>
-                        <br>
-                        <a href="#" style="font-size: 14px;">Open File</a>
-                    </li>
-                    <li style="padding: 10px 0;">
-                        <strong>HR Interview Questions - How to Answer Them Effectively</strong> 
-                        <span class="tag">Interview Prep</span>
-                        <br>
-                        <a href="#" style="font-size: 14px;">Read Guide</a>
-                    </li>
-                </ul>
-            </div>
-
+        <div id="resources-grid" class="grid">
+            <!-- Dynamic content will be injected here -->
         </div>
     </div>
 
@@ -133,5 +96,6 @@
     </footer>
 
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/resources.js"></script>
 </body>
 </html>
