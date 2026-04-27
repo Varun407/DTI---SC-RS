@@ -1,0 +1,11 @@
+# Local configuration
+js/config.js
+.env
+.env.local
+
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db

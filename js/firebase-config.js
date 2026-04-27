@@ -5,7 +5,7 @@ const firebaseConfig = {
   projectId: "unihub-ab26b",
   storageBucket: "unihub-ab26b.firebasestorage.app",
   messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "1:YOUR_MESSAGING_SENDER_ID:web:e6f50686c57b44411fa60f",
+  appId: "YOUR_APP_ID",
   measurementId: "YOUR_MEASUREMENT_ID"
 };
 
